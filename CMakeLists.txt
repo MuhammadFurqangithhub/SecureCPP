@@ -11,11 +11,11 @@ include_directories(include)
 file(GLOB_RECURSE SECURECPP_SOURCES src/*.cpp)
 
 # Create static library
-add_library(SecureCPP STATIC ${SECURECPP_SOURCES})
+#add_library(SecureCPP STATIC ${SECURECPP_SOURCES})
 
 # Build test executable
 add_executable(test_main tests/test_main.cpp)
-target_link_libraries(test_main SecureCPP)
+#target_link_libraries(test_main SecureCPP)
 
 # Optional: CLI tool
 if(EXISTS "${CMAKE_SOURCE_DIR}/cli/main.cpp")
