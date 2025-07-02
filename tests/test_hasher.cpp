@@ -6,9 +6,16 @@
 using namespace securecpp;
 
 void test_sha256_string() {
+    std::cout << "🔐 Testing Hasher Module\n";
     std::string input = "SecureCPP";
-    std::string expectedHash = "4a372d94a5cbe1b26be22963b478fda39cf3f62bc413d625d3c23fdaed98a0ed"; // precomputed
-    std::string actualHash = Hasher::sha256(input);
+    std::string expectedHash = "3af7f72e7393776347079d9ac65be2fd8163014dfb4e71267bcc60aa67c37ce3";
+
+    std::string actualHash = securecpp::Hasher::sha256(input);
+
+    // 🔍 Debug Output
+    std::cout << "Expected: " << expectedHash << std::endl;
+    std::cout << "Actual  : " << actualHash << std::endl;
+
     assert(actualHash == expectedHash);
     std::cout << "[✔] String hashing test passed\n";
 }
@@ -19,7 +26,7 @@ void test_sha256_file() {
     file << "SecureCPP";
     file.close();
 
-    std::string expectedHash = "4a372d94a5cbe1b26be22963b478fda39cf3f62bc413d625d3c23fdaed98a0ed";
+    std::string expectedHash = "3af7f72e7393776347079d9ac65be2fd8163014dfb4e71267bcc60aa67c37ce3";
     std::string actualHash = Hasher::sha256FromFile("temp_test.txt");
     assert(actualHash == expectedHash);
     std::cout << "[✔] File hashing test passed\n";

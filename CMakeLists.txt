@@ -4,7 +4,8 @@ project(SecureCPP)
 set(CMAKE_CXX_STANDARD 17)
 
 # Include headers
-include_directories(include)
+#include_directories(include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Collect source files
 file(GLOB_RECURSE SECURECPP_SOURCES src/*.cpp)
