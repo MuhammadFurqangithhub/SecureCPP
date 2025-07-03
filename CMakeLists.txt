@@ -25,3 +25,6 @@ target_link_libraries(test_main SecureCPP)
 # Test: test_hasher
 add_executable(test_hasher tests/test_hasher.cpp)
 target_link_libraries(test_hasher SecureCPP)
+
+add_executable(test_encryptor tests/test_encryptor.cpp)
+target_link_libraries(test_encryptor SecureCPP OpenSSL::Crypto)
